@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "2.5.9"
-	id("io.spring.dependency-management") version "1.0.11.RELEASE"
-	kotlin("jvm") version "1.5.32"
-  	kotlin("plugin.spring") version "1.5.32"
+	id("org.springframework.boot") version "3.2.0"
+	id("io.spring.dependency-management") version "1.1.4"
+	kotlin("jvm") version "1.9.20"
+	kotlin("plugin.spring") version "1.9.20"
 }
 
 group = "io.paketo"
@@ -28,7 +28,7 @@ dependencies {
 	}
 	testImplementation("io.projectreactor:reactor-test")
 }
-
+java.sourceCompatibility = JavaVersion.VERSION_17
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
@@ -36,6 +36,6 @@ tasks.withType<Test> {
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "1.8"
+		jvmTarget = "17"
 	}
 }
