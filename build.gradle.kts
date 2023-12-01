@@ -27,6 +27,8 @@ dependencies {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
 	testImplementation("io.projectreactor:reactor-test")
+
+	implementation("com.squareup.okhttp3:okhttp:4.12.0")
 }
 java.sourceCompatibility = JavaVersion.VERSION_17
 tasks.withType<Test> {
